@@ -1,0 +1,275 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-18T13:22:21.233Z",
+    "end": "2025-02-18T13:22:23.702Z",
+    "duration": 2469,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "098e47d3-5fa9-4ad8-897e-947107a6ba10",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eba5f601-169f-417b-b1dc-005d215f1e3e",
+          "title": "API AUTOMATION",
+          "fullFile": "C:\\Users\\Admin\\Documents\\sesi7\\test\\tugas\\createReqres.js",
+          "file": "\\test\\tugas\\createReqres.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create user should be success",
+              "fullTitle": "API AUTOMATION Create user should be success",
+              "timedOut": false,
+              "duration": 712,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst url = 'https://reqres.in/api/users'\nconst requestData = {\n    \"name\": \"Aditia\",\n    \"job\": \"QA\",\n    \"id\": \"333\",\n    \"createdAt\": \"2025-02-18T09:47:42.728Z\"\n};\nconst response = await fetch(url, {\n    method: \"POST\",\n    headers: {\n        \"Content-Type\": \"application/json\"\n    },\n    body: JSON.stringify(requestData)\n});\nconst Responsedata = await response.json();\n\n      \n//console.log(\"Response : \" + JSON.stringify(Responsedata, null, 1));\nassert.strictEqual(response.status, 201, \"Status harus 201\");\nassert.strictEqual(Responsedata.name, \"Aditia\");\nassert.strictEqual(Responsedata.job, \"QA\");",
+              "err": {},
+              "uuid": "a2708fc5-d983-4aac-9682-13a8127739cc",
+              "parentUUID": "eba5f601-169f-417b-b1dc-005d215f1e3e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a2708fc5-d983-4aac-9682-13a8127739cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 712,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "4d5be4d2-29a8-4dcb-b676-943f34b57245",
+          "title": "API AUTOMATION",
+          "fullFile": "C:\\Users\\Admin\\Documents\\sesi7\\test\\tugas\\deleteReqres.js",
+          "file": "\\test\\tugas\\deleteReqres.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete user should be success",
+              "fullTitle": "API AUTOMATION Delete user should be success",
+              "timedOut": false,
+              "duration": 545,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000);\nconst url = 'https://reqres.in/api/users/2';\nconst response = await fetch(url, {\n    method: \"DELETE\", \n    headers: {\n        \"Content-Type\": \"application/json\"\n    }\n});\n      \n//console.log(\"Response Status : \" + response.status);\nassert.strictEqual(response.status, 204, \"Status harus 204\");",
+              "err": {},
+              "uuid": "77d59151-e539-4b7e-97a0-f58abcd17c61",
+              "parentUUID": "4d5be4d2-29a8-4dcb-b676-943f34b57245",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "77d59151-e539-4b7e-97a0-f58abcd17c61"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 545,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b18a3ba5-f6c5-4033-b08c-cb55e06ccd0c",
+          "title": "API AUTOMATION",
+          "fullFile": "C:\\Users\\Admin\\Documents\\sesi7\\test\\tugas\\getReqres.js",
+          "file": "\\test\\tugas\\getReqres.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get user should be success",
+              "fullTitle": "API AUTOMATION Get user should be success",
+              "timedOut": false,
+              "duration": 76,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users/2')\nconst Responsedata = await response.json()\n\n//console.log(\"Response API : \" + JSON.stringify(Responsedata, null, 1));\nassert.strictEqual(response.status, 200)",
+              "err": {},
+              "uuid": "7687b893-f335-4a98-9ea2-2a782587ba7a",
+              "parentUUID": "b18a3ba5-f6c5-4033-b08c-cb55e06ccd0c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get invalid user should be error",
+              "fullTitle": "API AUTOMATION Get invalid user should be error",
+              "timedOut": false,
+              "duration": 537,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users/1000')\nconst Responsedata = await response.json()\n\n//console.log(\"Response : \" + JSON.stringify(Responsedata, null, 1))\nassert.strictEqual(response.status, 404)",
+              "err": {},
+              "uuid": "062270cf-0b6e-4fee-85ff-6caafaa619c5",
+              "parentUUID": "b18a3ba5-f6c5-4033-b08c-cb55e06ccd0c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7687b893-f335-4a98-9ea2-2a782587ba7a",
+            "062270cf-0b6e-4fee-85ff-6caafaa619c5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 613,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "13dbf250-4924-49d0-bb32-f4dc71ec0c49",
+          "title": "API AUTOMATION",
+          "fullFile": "C:\\Users\\Admin\\Documents\\sesi7\\test\\tugas\\JsonSchema.js",
+          "file": "\\test\\tugas\\JsonSchema.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get user should be success",
+              "fullTitle": "API AUTOMATION Get user should be success",
+              "timedOut": false,
+              "duration": 87,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users/2')\nconst data = await response.json()\nconst validate = ajv.compile(schema);\nconst valid = validate(data);\nif (!valid) {\n    console.log(validate.errors);\n}\n//console.log(\"test: \" + JSON.stringify(data, null, 1))\nassert.ok(valid, \"Response JSON harus sesuai dengan schema\");",
+              "err": {},
+              "uuid": "9f551426-9017-4632-866b-94a6e3fea8e8",
+              "parentUUID": "13dbf250-4924-49d0-bb32-f4dc71ec0c49",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f551426-9017-4632-866b-94a6e3fea8e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 87,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "fa97028a-6bc1-45ba-b03c-85c73f03bcf0",
+          "title": "API AUTOMATION",
+          "fullFile": "C:\\Users\\Admin\\Documents\\sesi7\\test\\tugas\\updateReqres.js",
+          "file": "\\test\\tugas\\updateReqres.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Update user should be success",
+              "fullTitle": "API AUTOMATION Update user should be success",
+              "timedOut": false,
+              "duration": 504,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst url = 'https://reqres.in/api/users/2'\nconst requestData = {\n    \"name\": \"Aditia\",\n    \"job\": \"QA Engineer\",\n    \"updatedAt\": \"2025-02-18T10:08:36.768Z\"\n};\nconst response = await fetch(url, {\n    method: \"PATCH\",\n    headers: {\n        \"Content-Type\": \"application/json\"\n    },\n    body: JSON.stringify(requestData)\n});\nconst Responsedata = await response.json();\n\n      \n//console.log(\"Response : \" + JSON.stringify(Responsedata, null, 1));\nassert.strictEqual(response.status, 200, \"Status harus 200\");\nassert.strictEqual(Responsedata.name, \"Aditia\");\nassert.strictEqual(Responsedata.job, \"QA Engineer\");",
+              "err": {},
+              "uuid": "0e96a854-bd9a-42e8-9fbb-cf42707d4e14",
+              "parentUUID": "fa97028a-6bc1-45ba-b03c-85c73f03bcf0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0e96a854-bd9a-42e8-9fbb-cf42707d4e14"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 504,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
